@@ -1,0 +1,38 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Liste des Produits</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col" *ngFor="let product of products">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">ID : {{ product.id }}</h6>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text">
+                        <strong>Prix : {{ product.price }}</strong>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary me-2" (click)="editProduct(product.id)">Modifier</button>
+                    <button class="btn btn-danger" (click)="handleConfirmDelete(product.id)">Supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmer la suppression</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Êtes-vous sûr de vouloir supprimer ce produit ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="handleCancelDelete()">Annuler</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="handleDeleteProduct()">Supprimer</button>
+      </div>
+    </div>
+  </div>
+</div>
