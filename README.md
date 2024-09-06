@@ -40,7 +40,7 @@ Avant de démarrer, assurez-vous d'avoir les éléments suivants installés sur 
 1. Clonez le dépôt sur votre machine locale :
 
 ```bash
-git clone https://github.com/votre-utilisateur/votre-repo.git
+git clone https://github.com/LVCHARVET/angularCrud.git
 cd votre-repo
 npm install
 ```
